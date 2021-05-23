@@ -30,7 +30,7 @@ spec:
         checkout scm
         stage('Compile a Maven project') {
           container('maven') {
-            sh 'mvn -B -Dskip.tests=true clean compile'
+            sh 'mvn -B -DskipTests=true -s settings-local.xml clean compile'
           }
         }
       }

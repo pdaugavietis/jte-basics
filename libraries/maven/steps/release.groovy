@@ -28,7 +28,7 @@ spec:
    node(POD_LABEL) {
      stage('Deploy artifacts to Nexus') {
        container('maven') {
-         sh 'mvn -B -Dskip.tests=true deploy'
+         sh 'mvn -B -Dskip.tests=true -s settings-local.xml deploy'
        }
      }
    }

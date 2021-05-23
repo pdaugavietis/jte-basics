@@ -30,7 +30,7 @@ spec:
       node(POD_LABEL) {
         stage('Compile a Maven project') {
           container('maven') {
-            sh 'mvn -B test'
+            sh 'mvn -B -s settings-local.xml verify'
           }
         }
       }
