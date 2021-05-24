@@ -1,0 +1,133 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - usernamePassword:
+          id: "pdaugavietis-gh"
+          password: "{AQAAABAAAAAw98XQGUeXorEYQRfXOlel9TReaWy+wXa/vhl3ESbsLlV60d+L62VK5/W/qSO9nlGOb9T7yvAUZ9fpxOOFmYwDLw==}"
+          scope: GLOBAL
+          username: "pdaugavietis"
+      - usernamePassword:
+          id: "pd-github"
+          password: "{AQAAABAAAAAwG2TvdPCGLSlyYo8QRh+uWnfFVsc0myEUf04p2+k9oFd9ByiCVOQp29iO48814ztDzlEu4VaSRhwghte/D7eCAA==}"
+          scope: GLOBAL
+          username: "pdaugavietis"
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  clouds:
+  - kubernetes:
+      jenkinsTunnel: "jenkins-operator-slave-dev-jenkins.default.svc.cluster.local:50000"
+      jenkinsUrl: "http://jenkins-operator-http-dev-jenkins.default.svc.cluster.local:8080"
+      name: "kubernetes"
+      namespace: "default"
+      retentionTimeout: 15
+      serverUrl: "https://kubernetes.default.svc.cluster.local:443"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  labelAtoms:
+  - name: "master"
+  markupFormatter: "plainText"
+  mode: EXCLUSIVE
+  myViewsTabBar: "standard"
+  noUsageStatistics: true
+  numExecutors: 0
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "jenkins-operator"
+        name: "jenkins-operator"
+        properties:
+        - "apiToken"
+        - favoriting:
+            autofavoriteEnabled: true
+        - "mailer"
+        - "favorite"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+  sSHD:
+    port: -1
+unclassified:
+  bitbucketEndpointConfiguration:
+    endpoints:
+    - bitbucketCloudEndpoint:
+        enableCache: false
+        manageHooks: false
+        repositoriesCacheDuration: 0
+        teamCacheDuration: 0
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    configs:
+    - name: "Github"
+    hookUrl: "https://dev-jenkins.pdaugavietis.staff.adaptavist.com/github-webhook/"
+  gitSCM:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  junitTestResultStorage:
+    storage: "file"
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "https://dev-jenkins.pdaugavietis.staff.adaptavist.com/"
+  logstashConfiguration:
+    enableGlobally: false
+    enabled: false
+    milliSecondTimestamps: true
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  pollSCM:
+    pollingThreadCount: 10
+  templateGlobalConfig:
+    tier:
+      configurationProvider: "null"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
