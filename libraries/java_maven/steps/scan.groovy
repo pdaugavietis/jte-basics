@@ -32,11 +32,11 @@ spec:
       workspaceVolume: persistentVolumeClaimWorkspaceVolume(claimName: 'agent-workspaces', readOnly: false)
   ) {
     node(POD_LABEL) {
-      stage('Scan with Dependency Scanner') {
-        container('maven') {
-          sh "mvn -B dependency-check:check"
-        }
-      }
+      // stage('Scan with Dependency Scanner') {
+      //   container('maven') {
+      //     sh "mvn -B dependency-check:check"
+      //   }
+      // }
       stage('Scan with Sonarqube') {
         container('maven') {
           sh "mvn -B sonar:sonar -Dsonar.dependencyCheck.securityHotspot=true -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html"
