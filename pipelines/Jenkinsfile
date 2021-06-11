@@ -1,0 +1,4 @@
+maven_build()
+maven_test()
+sonarqube_scan()
+
