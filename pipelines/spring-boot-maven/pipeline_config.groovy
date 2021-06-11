@@ -6,7 +6,6 @@ libraries {
 stage {
   continuous_integration {
     build
-    test
     scan
   }
 }
