@@ -3,7 +3,7 @@ libraries {
   sonarqube
 }
 
-stage {
+stages {
   continuous_integration {
     build
     scan
