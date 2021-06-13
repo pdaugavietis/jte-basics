@@ -18,7 +18,7 @@ spec:
     podTemplate(
       yaml: yaml,
       containers: [
-          containerTemplate(name: 'dind', image: 'docker:18.05-dind', privileged: true, command: 'cat')
+          containerTemplate(name: 'dind', image: 'docker:18.05-dind', privileged: true, ttyEnabled: true, command: 'cat')
       ],
       volumes: [
           emptyDirVolume(mountPath: '/var/lib/docker')
