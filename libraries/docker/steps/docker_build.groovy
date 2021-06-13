@@ -29,7 +29,7 @@ spec:
 
     node(POD_LABEL) {
       stage('Build Docker Image') {
-        sh "echo from inside: ${docker build --help}"
+        sh "docker build --help"
       }
     }
   }
