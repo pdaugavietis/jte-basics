@@ -28,7 +28,7 @@ spec:
 
     node(POD_LABEL) {
       stage('Build Docker Image') {
-        sh "docker build --help"
+        sh "/usr/bin/docker build --help"
       }
     }
   }
