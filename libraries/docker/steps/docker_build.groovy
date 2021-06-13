@@ -18,6 +18,7 @@ spec:
     podTemplate(
       yaml: yaml,
       containers: [
+          /* groovylint-disable-next-line LineLength */
           containerTemplate(name: 'dind', image: 'docker:18.05-dind', privileged: true, ttyEnabled: true, command: 'cat')
       ],
       volumes: [
@@ -28,7 +29,7 @@ spec:
 
     node(POD_LABEL) {
       stage('Build Docker Image') {
-        echo "from inside: ${docker build --help}"
+        sh "echo from inside: ${docker build --help}"
       }
     }
   }
