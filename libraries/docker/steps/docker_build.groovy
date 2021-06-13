@@ -18,8 +18,7 @@ spec:
     podTemplate(
       yaml: yaml,
       containers: [
-          /* groovylint-disable-next-line LineLength */
-          containerTemplate(name: 'dind', image: 'docker:18.05-dind', privileged: true, ttyEnabled: true, command: 'cat')
+          containerTemplate(name: 'dind', image: 'docker:18.05-dind', ttyEnabled: true, command: 'cat')
       ],
       volumes: [
           emptyDirVolume(mountPath: '/var/lib/docker')
