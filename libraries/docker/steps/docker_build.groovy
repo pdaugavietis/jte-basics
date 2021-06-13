@@ -21,7 +21,7 @@ spec:
           containerTemplate(name: 'dind', image: 'docker:18.05-dind', privileged: true, command: 'cat')
       ],
       volumes: [
-          emptyDirVolumeClaim(claimName: 'dind-storage', mountPath: '/var/lib/docker')
+          emptyDirVolume(mountPath: '/var/lib/docker')
       ],
       workspaceVolume: persistentVolumeClaimWorkspaceVolume(claimName: 'agent-workspaces', readOnly: false)
   ) {
